@@ -1,0 +1,14 @@
+version: "3"
+services:
+  nginx:
+    image: rraj4/nginx-more
+    container_name: nginx
+    environment:
+      TZ: "Asia/Kathmandu"
+    expose:
+      - 80
+    ports:
+      - 80:80
+    volumes:
+      - "./nginx/conf.d:/etc/nginx/conf.d/vhosts"
+      - "./nginx/frontend:/usr/share/nginx/html"
